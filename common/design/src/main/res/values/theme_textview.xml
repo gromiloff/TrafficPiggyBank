@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <!-- Разделение по жирности -->
+    <style name="AppTextView.Regular">
+        <item name="fontFamily">sans-serif</item>
+    </style>
+    <style name="AppTextView.Medium">
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
+
+
+    <!-- разделение по размеру шрифта -->
+    <style name="AppTextView.Medium.Size16">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="AppTextView.Medium.Size20">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="AppTextView.Regular.Size28">
+        <item name="android:textSize">28sp</item>
+    </style>
+    <style name="AppTextView.Regular.Size20">
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="AppTextView.Regular.Size18">
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="AppTextView.Regular.Size16">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="AppTextView.Regular.Size14">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="AppTextView.Regular.Size12">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+    <!-- разделение по цвету -->
+    <style name="AppTextView.Medium.Size16.Dark">
+        <item name="android:textColor">@color/dark_33</item>
+    </style>
+    <style name="AppTextView.Medium.Size20.Dark">
+        <item name="android:textColor">@color/dark_33</item>
+    </style>
+    <style name="AppTextView.Regular.Size28.Dark">
+        <item name="android:textColor">@color/dark_33</item>
+    </style>
+    <style name="AppTextView.Regular.Size20.Dark">
+        <item name="android:textColor">@color/dark_33</item>
+    </style>
+    <style name="AppTextView.Regular.Size18.Dark">
+        <item name="android:textColor">@color/dark_33</item>
+    </style>
+    <style name="AppTextView.Regular.Size16.Dark">
+        <item name="android:textColor">@color/dark_33</item>
+    </style>
+    <style name="AppTextView.Regular.Size16.Gray">
+        <item name="android:textColor">@color/gray_8A</item>
+    </style>
+    <style name="AppTextView.Regular.Size16.White">
+        <item name="android:textColor">@color/gray_white</item>
+    </style>
+    <style name="AppTextView.Regular.Size16.PrimaryLight">
+        <item name="android:textColor">@color/primary_light</item>
+    </style>
+    <style name="AppTextView.Regular.Size14.Primary">
+        <item name="android:textColor">@color/primary</item>
+    </style>
+    <style name="AppTextView.Regular.Size14.Dark">
+        <item name="android:textColor">@color/dark_33</item>
+    </style>
+    <style name="AppTextView.Regular.Size14.Gray">
+        <item name="android:textColor">@color/gray_8A</item>
+    </style>
+    <style name="AppTextView.Regular.Size12.Gray">
+        <item name="android:textColor">@color/gray_8A</item>
+    </style>
+</resources>

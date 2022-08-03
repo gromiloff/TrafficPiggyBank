@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- стиль для тулбара -->
+    <style name="App.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:background">@color/additional_blue</item>
+
+        <item name="titleTextAppearance">@style/App.Toolbar.Title</item>
+        <item name="subtitleTextAppearance">@style/App.Toolbar.SubTitle</item>
+
+        <item name="titleTextColor">@color/dark_33</item>
+        <item name="subtitleTextColor">@color/gray_8A</item>
+    </style>
+
+    <!-- стиль основного текста в тулбаре -->
+    <style name="App.Toolbar.Title" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/dark_33</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+    <style name="App.Toolbar.Title.OperationType">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- стиль вспомогательного текста в тулбаре -->
+    <style name="App.Toolbar.SubTitle" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/gray_8A</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+</resources>

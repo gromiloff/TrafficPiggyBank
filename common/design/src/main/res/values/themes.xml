@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- высота тулбара указывается тут -->
+        <item name="actionBarSize">56dp</item>
+        <!-- стилизация диалогов -->
+        <item name="materialAlertDialogTheme">@style/MainMaterialAlertDialog</item>
+
+        <!-- постоянная палитра для материал дизайна -->
+        <item name="colorSurface">@color/gray_white</item>
+        <item name="colorPrimaryDark">@color/gray_white</item>
+        <item name="colorError">@color/additional_red</item>
+        <item name="background">@color/gray_white</item>
+        <item name="colorControlNormal">@color/dark_33</item>
+
+
+        <!-- временная палитра для материал дизайна -->
+        <item name="colorPrimary">@android:color/holo_purple</item>
+        <item name="colorAccent">@android:color/holo_blue_bright</item>
+
+        <item name="android:textColorPrimary">@color/colorAccent</item>
+    </style>
+</resources>

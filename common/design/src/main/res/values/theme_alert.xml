@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- стиль для всех диалоговых окон -->
+    <style name="MainMaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="materialAlertDialogTitleTextStyle">@style/MainMaterialAlertDialogTitle</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/MainMaterialAlertDialogSupportingText</item>
+        <item name="buttonBarPositiveButtonStyle">@style/MainMaterialAlertDialogButton</item>
+        <item name="buttonBarNeutralButtonStyle">@style/MainMaterialAlertDialogButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/MainMaterialAlertDialogButton</item>
+    </style>
+
+    <!-- стиль TITLE для всех диалоговых окон -->
+    <style name="MainMaterialAlertDialogTitle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">@color/dark_33</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!-- стиль MESSAGE для всех диалоговых окон -->
+    <style name="MainMaterialAlertDialogSupportingText" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textColor">@color/dark_33</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- стиль BUTTON для всех диалоговых окон -->
+    <style name="MainMaterialAlertDialogButton" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/primary</item>
+    </style>
+</resources>

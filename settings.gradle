@@ -1,0 +1,22 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = "Traffic Piggy Bank"
+
+include ':app'
+
+include ':common:firebase'
+include ':common:module'
+include ':common:lang'
+include ':common:design'
+include ':common:toast'
+include ':common:roomHelp'
+include ':common:LocalPrefs'
+include ':common:publicApi'
+

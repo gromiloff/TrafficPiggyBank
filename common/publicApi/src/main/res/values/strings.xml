@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="box_restrictions_center_in" type="string">Ограничение выбранной области</item>
+    <item name="box_restrictions_change_radius" type="string">Ограничение радиуса области перемещения на %d</item>
+</resources>

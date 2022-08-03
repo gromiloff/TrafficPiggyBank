@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- !!! Цвета для использования только в контексте раритетности !!! -->
+    <color name="colorRaritySimple">#a0a0a0</color>
+    <color name="colorRarityComplex">#42f5b6</color>
+    <color name="colorRarityRare">#ebdf02</color>
+    <color name="colorRarityUnreal">#644fff</color>
+
+    <color name="colorIconActive">#ff0000</color>
+
+    <!-- УДАЛИТЬ ПОСЛЕ ПОЛНОГО РЕДИЗАЙНА -->
+    <color name="colorPrimary">#2c2c35</color>
+    <color name="colorPrimaryDark">#2c2c35</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="barcode_success">#ff99cc00</color>
+    <color name="barcode_fail">#ffff4444</color>
+    <color name="barcode_duplicate">#ffff00</color>
+    <color name="main_text">#2C2D36</color>
+    <color name="hint_text">#A7A7AE</color>
+    <color name="background">#F4F5F8</color>
+    <color name="alpha_frame">#80000000</color>
+    <!-- НОВЫЕ ЦВЕТА -->
+    <color name="logo_light">#805C7B80</color> <!-- 50% -->
+    <color name="logo_middle">#005C7B</color>
+    <color name="logo_dark">#10263A</color>
+
+    <color name="primary_light">#09A3BC</color>
+    <color name="primary">#007688</color>
+    <color name="primary_dark">#066473</color>
+
+    <color name="dark_33">#333333</color>
+    <color name="gray_8A">#8A8A8A</color>
+    <color name="gray_b4">#B4B4B4</color>
+    <color name="gray_stroke">#DCDCDC</color>
+    <color name="gray_line">#E6E6E6</color>
+    <color name="gray_disabled_field">#F0F0F0</color>
+    <color name="gray_background">#F5F5F5</color>
+    <color name="gray_white">#FFFFFF</color>
+
+    <color name="additional_red">#B94A48</color>
+    <color name="additional_red_middle">#C76E6D</color>
+    <color name="additional_red_light">#F1DCDC</color>
+
+    <color name="additional_blue">#3276B1</color>
+    <color name="additional_blue_middle">#4A90CC</color>
+    <color name="additional_info_blue">#57889C</color>
+    <color name="additional_info_blue_light">#74A0B2</color>
+
+    <color name="additional_green">#739E73</color>
+    <color name="additional_green_middle">#91B391</color>
+    <color name="additional_green_light">#CDDDCD</color>
+    <color name="additional_green_light_2">#EBF1EB</color>
+
+    <color name="additional_orange">#C79121</color>
+    <color name="additional_orange_middle">#DFAA3C</color>
+    <color name="additional_orange_light">#F4E3C0</color>
+
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="listModel"
+            type="design.list.ListModel"/>
+        <variable
+            name="emptyModel"
+            type="design.list.EmptyModel"/>
+        <variable
+            name="gridModel"
+            type="design.list.GridModel"/>
+        <variable
+            name="waitingModel"
+            type="design.model.WaitingModel"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            app:gridColumnCount="@{gridModel.counts}"
+            app:customListAdapter="@{listModel.customAdapter}"
+            app:decorations="@{listModel.decorators}"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="24dp"
+            android:gravity="center_horizontal"
+            tools:text="ЗАГЛУШКА"
+            android:textSize="18sp"
+            app:textData="@{emptyModel.emptyModel}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <include
+            app:waitingModel="@{waitingModel}"
+            tools:visibility="gone"
+            layout="@layout/view_block_vm"/>
+    </FrameLayout>
+</layout>
