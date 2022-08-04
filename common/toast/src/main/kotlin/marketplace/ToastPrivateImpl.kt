@@ -2,7 +2,7 @@ package marketplace
 
 import android.content.Context
 import android.widget.Toast
-import api.ShowToastApi
+import api.function.ShowToastApi
 import api.model.text.TextHolder
 import gromiloff.toast.R
 

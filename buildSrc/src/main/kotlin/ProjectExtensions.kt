@@ -60,6 +60,10 @@ fun DependencyHandlerScope.applicationDependency() {
     implementation(project(Modules.design))
     implementation(project(Modules.toast))
     implementation(project(Modules.public))
+
+    implementation(project(Modules.table_traffic))
+
+    implementation(project(Modules.sync))
 }
 fun DependencyHandlerScope.requiredDependency() {
     api(Deps.kotlinCore)

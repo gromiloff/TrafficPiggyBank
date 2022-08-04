@@ -20,3 +20,7 @@ include ':common:roomHelp'
 include ':common:LocalPrefs'
 include ':common:publicApi'
 
+include ':table:traffic'
+
+include ':repository:sync'
+

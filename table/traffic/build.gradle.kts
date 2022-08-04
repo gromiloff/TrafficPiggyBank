@@ -1,12 +1,13 @@
 plugins {
     id("base-library")
-    id("kotlin-parcelize")
     id("kotlin-kapt")
 }
 
 dependencies {
-    requiredUiDependency()
     requiredDependency()
     requiredKoinDependency()
-    implementation(project(Modules.module))
+    requiredRoomDependency()
+
+    api(project(Modules.module))
+    api(project(Modules.public))
 }

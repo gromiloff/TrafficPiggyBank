@@ -9,6 +9,7 @@ import org.koin.android.ext.koin.androidLogger
 import org.koin.core.component.KoinComponent
 import org.koin.core.context.GlobalContext.startKoin
 import org.koin.core.logger.Level
+import repository.sync.SyncModule
 import timber.log.Timber
 
 @Suppress("unused")
@@ -26,6 +27,8 @@ class App : LangApplication(), KoinComponent {
             androidContext(this@App)
             modules(
                 ToastModule.create(this@App),
+
+                SyncModule.create(this@App),
             )
         }
 

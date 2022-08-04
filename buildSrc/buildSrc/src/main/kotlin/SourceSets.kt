@@ -41,6 +41,10 @@ object Modules {
     const val roomHelp = ":common:roomHelp"
     const val prefs = ":common:LocalPrefs"
     const val public = ":common:publicApi"
+
+    const val table_traffic = ":table:traffic"
+
+    const val sync = ":repository:sync"
 }
 
 object Deps {
