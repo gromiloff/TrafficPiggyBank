@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/common/LocalPrefs" />
             <option value="$PROJECT_DIR$/common/design" />
+            <option value="$PROJECT_DIR$/common/filesApi" />
             <option value="$PROJECT_DIR$/common/firebase" />
             <option value="$PROJECT_DIR$/common/lang" />
             <option value="$PROJECT_DIR$/common/module" />
@@ -26,6 +27,9 @@
             <option value="$PROJECT_DIR$/repository/sync" />
             <option value="$PROJECT_DIR$/table" />
             <option value="$PROJECT_DIR$/table/traffic" />
+            <option value="$PROJECT_DIR$/ui" />
+            <option value="$PROJECT_DIR$/ui/screen" />
+            <option value="$PROJECT_DIR$/ui/screen/login" />
           </set>
         </option>
       </GradleProjectSettings>

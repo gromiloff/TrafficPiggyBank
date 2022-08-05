@@ -54,21 +54,24 @@ fun DependencyHandlerScope.applicationDependency() {
     requiredKoinDependency()
     requiredDependency()
     implementation(project(Modules.module))
-    implementation(project(Modules.firebase))
+   // implementation(project(Modules.firebase))
     implementation(project(Modules.lang))
     implementation(project(Modules.prefs))
     implementation(project(Modules.design))
     implementation(project(Modules.toast))
     implementation(project(Modules.public))
+    implementation(project(Modules.filesApi))
 
     implementation(project(Modules.table_traffic))
 
     implementation(project(Modules.sync))
+
+    implementation(project(Modules.uiLogin))
 }
 fun DependencyHandlerScope.requiredDependency() {
     api(Deps.kotlinCore)
     api(Deps.kotlinStdLib)
-    implementation(Deps.coroutinesPlay)
+    api(Deps.coroutinesPlay)
     api(Deps.timber)
 }
 fun DependencyHandlerScope.requiredUiDependency() {
@@ -77,7 +80,7 @@ fun DependencyHandlerScope.requiredUiDependency() {
     api(Deps.constraintLayout)
 }
 fun DependencyHandlerScope.requiredRoomDependency() {
-    implementation(Deps.room)
+    api(Deps.room)
     //implementation(Deps.roomCoroutines)
     //annotationProcessor(Deps.roomCompiler)
     kapt(Deps.roomCompiler)

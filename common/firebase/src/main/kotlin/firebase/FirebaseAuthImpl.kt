@@ -18,7 +18,6 @@ internal object FirebaseAuthImpl : FirebaseAuthApi {
         Firebase.auth
             .signInWithCredential(GoogleAuthProvider.getCredential(idToken, null))
             .await()
-        FireStoreImpl.newUser()
         true
     } catch (e:Exception) {
         Timber.d(e)
@@ -47,7 +46,6 @@ internal object FirebaseAuthImpl : FirebaseAuthApi {
     override suspend fun signInAnonymously(): Boolean {
         return try {
             Firebase.auth.signInAnonymously().await()
-            FireStoreImpl.newUser()
             true
         } catch (e:Exception) {
             Timber.e(e)

@@ -1,10 +1,13 @@
 package design
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.provider.Settings
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
+import api.ll.PermissionWrap
 import api.model.text.TextHolder
 import lang.LangActivity
 import org.koin.core.component.KoinComponent
@@ -75,9 +78,9 @@ abstract class BaseActivity<Command : Action> : LangActivity(), KoinComponent {
 
     protected open fun handleAction(action : Command) = Unit
 
-    protected fun checkPermissions() {
+    private fun checkPermissions(requestPermissions : Array<String> = permissions) {
         // проверим по запрашиваемым пермишенам, пропуская те у которым доступ уже есть
-        val request = permissions
+        val request = requestPermissions
             .filter { ActivityCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_GRANTED }
             .toTypedArray()
 
@@ -89,6 +92,21 @@ abstract class BaseActivity<Command : Action> : LangActivity(), KoinComponent {
                 ActivityCompat.requestPermissions(this, request, PERMISSION)
             } catch (e: Exception) {
                 Timber.e(e)
+            }
+        }
+    }
+
+    /** Общий обработчик для запроса разрешений
+     *
+     * todo добавить обработчик отказа если пользватель повтрно пытается провалиться на те же разрешения */
+    protected fun handlePermission(set : HashSet<PermissionWrap>) {
+        if(set.isNotEmpty()) {
+            set.forEach {
+                when(it) {
+                    PermissionWrap.Existing -> { /* Unit */ }
+                    is PermissionWrap.Normal -> checkPermissions(permissions + it.list)
+                    PermissionWrap.Settings -> startActivity(Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS))
+                }
             }
         }
     }

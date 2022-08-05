@@ -3,6 +3,7 @@ package impl
 import android.content.Context
 import gromiloff.prefs.PublicEmptyImpl
 import lang.LangApplication
+import login.LoginModule
 import marketplace.ToastModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -10,6 +11,7 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.context.GlobalContext.startKoin
 import org.koin.core.logger.Level
 import repository.sync.SyncModule
+import table.traffic.TableTrafficModule
 import timber.log.Timber
 
 @Suppress("unused")
@@ -28,7 +30,11 @@ class App : LangApplication(), KoinComponent {
             modules(
                 ToastModule.create(this@App),
 
+                TableTrafficModule.create(this@App),
+
                 SyncModule.create(this@App),
+
+                LoginModule.create(this@App),
             )
         }
 

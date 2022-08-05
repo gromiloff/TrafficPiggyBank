@@ -6,7 +6,7 @@ import module.FeatureModule
 import org.koin.dsl.module
 
 /**
- * Описание зависимостей предоставляемых модулем трафика
+ * Описание зависимостей предоставляемых модулем синхронизации данных
  * */
 object SyncModule : FeatureModule {
     override fun create(context: Context) = module {

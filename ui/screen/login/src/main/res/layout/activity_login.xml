@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="model"
+            type="login.ui.LoginViewModel"/>
+        <variable
+            name="waitingModel"
+            type="design.model.WaitingModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_marginTop="24dp"
+            android:id="@+id/auth_title"
+            android:text="АВТОРИЗАЦИЯ"
+            android:textSize="20sp"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/auth_title"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:id="@+id/sign"
+            android:text="Войти через Google"
+            android:onClick="@{model.signAuth}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sign"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:id="@+id/go_to_marketplace"
+            android:text="Пробуем получить данные"
+            android:onClick="@{model.startSync}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.button.MaterialButton
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/go_to_marketplace"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:id="@+id/print"
+            android:text="Печать базы"
+            android:onClick="@{model.print}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <include
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:waitingModel="@{waitingModel}"
+            tools:visibility="gone"
+            layout="@layout/view_block_vm"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

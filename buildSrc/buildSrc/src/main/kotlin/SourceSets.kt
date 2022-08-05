@@ -1,5 +1,27 @@
 @file:Suppress("unused")
 
+object Modules {
+    // common
+    const val module = ":common:module"
+    const val firebase = ":common:firebase"
+    const val lang = ":common:lang"
+    const val design = ":common:design"
+    const val toast = ":common:toast"
+    const val roomHelp = ":common:roomHelp"
+    const val prefs = ":common:LocalPrefs"
+    const val public = ":common:publicApi"
+    const val filesApi = ":common:filesApi"
+
+    // table
+    const val table_traffic = ":table:traffic"
+
+    // repository
+    const val sync = ":repository:sync"
+
+    // ui // screen
+    const val uiLogin = ":ui:screen:login"
+}
+
 private object Versions {
     const val gradleBuildTools = "7.0.3"
     const val kotlin = "1.6.10"
@@ -30,21 +52,6 @@ object AppConfig {
     const val targetSdkVersion = 31
     const val versionCode = versionMajor * 100000 + versionMinor * 1000 + versionBuild
     const val versionName = "${versionMajor}.${versionMinor}.${versionBuild}"
-}
-
-object Modules {
-    const val module = ":common:module"
-    const val firebase = ":common:firebase"
-    const val lang = ":common:lang"
-    const val design = ":common:design"
-    const val toast = ":common:toast"
-    const val roomHelp = ":common:roomHelp"
-    const val prefs = ":common:LocalPrefs"
-    const val public = ":common:publicApi"
-
-    const val table_traffic = ":table:traffic"
-
-    const val sync = ":repository:sync"
 }
 
 object Deps {
