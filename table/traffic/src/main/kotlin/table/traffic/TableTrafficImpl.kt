@@ -1,6 +1,7 @@
 package table.traffic
 
 import api.table.TableTrafficApi
+import api.table.TrafficInterval
 import com.google.gson.GsonBuilder
 import impl.printBytes
 import impl.printTimeStump
@@ -86,6 +87,10 @@ internal data class TableTrafficImpl(
             }
         }
         return result
+    }
+
+    override suspend fun all(interval: TrafficInterval): List<TrafficModel> {
+        TODO("Not yet implemented")
     }
 
     override suspend fun createJsonFromDatabase(): String {
