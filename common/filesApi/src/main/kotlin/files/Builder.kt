@@ -55,19 +55,14 @@ suspend fun cloneDataBase() {
 suspend fun shareDB(activity : Context) {
     withContext(Dispatchers.IO) {
         try {
-            val filePath = File(activity.cacheDir, "cache")
-            if(!filePath.exists()) {
-                filePath.mkdirs()
-            }
-            val file = File(
-                filePath,
-                "TPB_".plus(SimpleDateFormat("dd-MM-yy HH:mm:sss", Locale.getDefault()).format(System.currentTimeMillis()).toString()).plus(".txt"));
+            val file = createFile(
+                activity,
+                "TPB_"
+                    .plus(SimpleDateFormat("dd-MM-yy HH:mm:sss", Locale.getDefault())
+                    .format(System.currentTimeMillis()).toString())
+                    .plus(".txt")
+            )
             val contentUri = FileProvider.getUriForFile(activity, "pro.gromiloff.files.fileprovider", file);
-
-            file.createNewFile()
-            file.setWritable(true)
-
-            fillFile(file)
 
             val intentShareFile = Intent(Intent.ACTION_SEND).apply {
                 type = "text/plain"
@@ -80,6 +75,18 @@ suspend fun shareDB(activity : Context) {
         } catch (e: Exception) {
             Timber.e(e)
         }
+    }
+}
+
+/** создать файл который будет виден внешним приложениям */
+fun createFile(context: Context, name : String) : File {
+    val dir = File(context.cacheDir, "cache")
+    if(!dir.exists()) {
+        dir.mkdirs()
+    }
+    return File(dir, name).apply {
+        createNewFile()
+        setWritable(true)
     }
 }
 

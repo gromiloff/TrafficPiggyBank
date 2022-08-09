@@ -3,6 +3,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
         gradlePluginPortal()
     }
 }
@@ -24,6 +25,7 @@ include ':common:filesApi'
 include ':table:traffic'
 
 include ':repository:sync'
+include ':repository:cryptoWallet'
 
 include ':ui:screen:login'
 

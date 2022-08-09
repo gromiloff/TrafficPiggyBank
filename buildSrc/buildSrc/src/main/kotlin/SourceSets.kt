@@ -17,6 +17,7 @@ object Modules {
 
     // repository
     const val sync = ":repository:sync"
+    const val cryptoWallet = ":repository:cryptoWallet"
 
     // ui // screen
     const val uiLogin = ":ui:screen:login"
@@ -128,6 +129,8 @@ object Deps {
 
     // сервисы Retrofit 2
     const val gson = "com.google.code.gson:gson:2.8.6"
+    const val moshi = "com.squareup.moshi:moshi:1.8.0"
+    const val okhttp = "com.squareup.okhttp3:okhttp:4.9.0"
     val retrofit = arrayOf(
         "com.squareup.retrofit2:retrofit:2.9.0",
         "com.squareup.retrofit2:converter-gson:2.6.2",
@@ -147,4 +150,7 @@ object Deps {
 
     // open street map android lib
     const val osmdroid = "org.osmdroid:osmdroid-android:6.1.13"
+
+    // https://github.com/WalletConnect/kotlin-walletconnect-lib
+    const val walletConnect = "com.github.WalletConnect:kotlin-walletconnect-lib:0.9.9"
 }

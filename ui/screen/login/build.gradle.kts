@@ -7,5 +7,5 @@ dependencies {
     api(project(Modules.design))
     api(project(Modules.module))
     api(project(Modules.filesApi))
-    //implementation(Deps.googleServicesAuth)
+    api(project(Modules.cryptoWallet))
 }

@@ -7,16 +7,16 @@ import gromiloff.prefs.PublicEmptyImpl
 import gromiloff.prefs.PublicPref
 import java.util.*
 
-internal object LangPref {
-    private var instance : PublicPref? = null
+internal object LangPrefHelper {
+    private const val PREF_NAME = "localize_app"
 
     fun create(context: Context) {
-        instance = PublicEmptyImpl(context, "localize_app")
+        PublicEmptyImpl.init(context, PREF_NAME)
     }
 
-    fun getCurrentLocale() : String = instance!!.getString(AppPrefLocaleImpl.CurrentLocale)!!
+    fun getCurrentLocale() : String = PublicEmptyImpl.get(PREF_NAME)!!.getString(AppPrefLocaleImpl.CurrentLocale)!!
 
-    fun setNewLocale() = instance!!.setString(AppPrefLocaleImpl.CurrentLocale, "")
+    fun setNewLocale() = PublicEmptyImpl.get(PREF_NAME)!!.setString(AppPrefLocaleImpl.CurrentLocale, "")
 }
 
 

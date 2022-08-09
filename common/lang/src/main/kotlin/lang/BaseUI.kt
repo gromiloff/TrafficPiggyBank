@@ -5,7 +5,7 @@ import android.content.res.AssetManager
 import android.content.res.Configuration
 import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
-import lang.prefs.LangPref
+import lang.prefs.LangPrefHelper
 
 abstract class LangActivity : AppCompatActivity() {
     private var localizableContext: Context? = null
@@ -26,7 +26,7 @@ abstract class LangActivity : AppCompatActivity() {
     override fun getAssets(): AssetManager = localizableContext!!.assets
     override fun getResources(): Resources = localizableContext!!.resources
 
-    private fun getLocaleString() = LangPref.getCurrentLocale()
+    private fun getLocaleString() = LangPrefHelper.getCurrentLocale()
 
     override fun onDestroy() {
         localizableContext = null

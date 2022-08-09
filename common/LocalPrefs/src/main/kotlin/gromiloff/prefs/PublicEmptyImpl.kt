@@ -15,7 +15,9 @@ open class PublicEmptyImpl(context: Context, name : String) : PublicPref {
 
     /* getter for fields */
     override fun <T : PrefEnum<*>> getString(key: T, defaultValue: String?) =
-        pref.getString(key.name, defaultValue ?: key.defaultValue as String)
+        pref.getString(key.name, defaultValue ?: key.defaultValue as String).apply {
+            Timber.d("> load value for [$key] = $this")
+        }
     override fun <T : PrefEnum<*>> getInt(key: T, defaultValue : Int?) =
         pref.getInt(key.name, defaultValue ?: key.defaultValue as Int)
     override fun <T : PrefEnum<*>> getBoolean(key: T, defaultValue : Boolean) =
@@ -67,12 +69,13 @@ open class PublicEmptyImpl(context: Context, name : String) : PublicPref {
     }
 
     companion object {
-        private var globalAppPrefs : PublicEmptyImpl? = null
+        private val prefs = HashMap<String, PublicEmptyImpl>()
 
         fun init(context: Context, name : String) {
-            globalAppPrefs = PublicEmptyImpl(context, name)
+            if(prefs.containsKey(name)) throw RuntimeException("name [$name] already in pref map")
+            prefs[name] = PublicEmptyImpl(context, name)
         }
 
-        fun get() = globalAppPrefs!!
+        fun get(name : String) = prefs[name]
     }
 }

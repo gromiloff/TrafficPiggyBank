@@ -2,6 +2,7 @@ package login.ui
 
 import android.content.Intent
 import android.view.View
+import api.function.CryptoWalletApi
 import api.function.SyncApi
 import design.BaseViewModel
 import files.shareDB
@@ -31,11 +32,14 @@ internal class LoginViewModel : BaseViewModel<LoginAction>() {
         }
     }
 
-    /** анонимная авторизация */
     val print = View.OnClickListener {
         wrapperWaiting {
             shareDB(it.context)
         }
+    }
+
+    val metamask = View.OnClickListener {
+        get<CryptoWalletApi>().start(it.context)
     }
 
     fun start() {
@@ -52,5 +56,9 @@ internal class LoginViewModel : BaseViewModel<LoginAction>() {
         wrapperWaiting {
 
         }
+    }
+
+    override fun onCleared() {
+        get<CryptoWalletApi>().stop()
     }
 }

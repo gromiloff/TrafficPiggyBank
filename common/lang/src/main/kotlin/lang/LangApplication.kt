@@ -5,13 +5,13 @@ import android.content.Context
 import android.content.res.AssetManager
 import android.content.res.Configuration
 import android.content.res.Resources
-import lang.prefs.LangPref
+import lang.prefs.LangPrefHelper
 
 abstract class LangApplication : Application() {
     private lateinit var localizableContext: Context
 
     override fun attachBaseContext(base: Context) {
-        LangPref.create(base)
+        LangPrefHelper.create(base)
         localizableContext = LangContextWrapper.newContext(base, getLocaleString())
         super.attachBaseContext(base)
     }
@@ -30,5 +30,5 @@ abstract class LangApplication : Application() {
 
     override fun getResources(): Resources = localizableContext.resources
 
-    private fun getLocaleString() = LangPref.getCurrentLocale()
+    private fun getLocaleString() = LangPrefHelper.getCurrentLocale()
 }

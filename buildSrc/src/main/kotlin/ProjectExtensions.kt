@@ -65,6 +65,7 @@ fun DependencyHandlerScope.applicationDependency() {
     implementation(project(Modules.table_traffic))
 
     implementation(project(Modules.sync))
+    implementation(project(Modules.cryptoWallet))
 
     implementation(project(Modules.uiLogin))
 }
