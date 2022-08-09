@@ -20,7 +20,7 @@ internal data class TableTrafficImpl(
     private val trafficDao: TrafficDao
 ) : TableTrafficApi {
     override fun lastUpdate(): Long {
-        TODO("Not yet implemented local prefs")
+        return PrefHelper.get()
     }
 
     override suspend fun insertOrReplace(
@@ -40,6 +40,7 @@ internal data class TableTrafficImpl(
         withContext(Dispatchers.IO) {
             trafficDao.insertOrReplace(TrafficEntity.create(packageName, packageUid, asWifiNetwork, rxBytes, txBytes, timeStart, timeEnd))
         }
+        PrefHelper.set(timeEnd)
     }
 
     override suspend fun all(): List<TrafficModel> {

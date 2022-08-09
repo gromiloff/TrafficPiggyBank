@@ -19,6 +19,7 @@ object TableTrafficModule : FeatureModule {
                 .build()
                 .trafficDao()
         )
+        PrefHelper.create(context)
         single<TableTrafficApi> {
             model
         }

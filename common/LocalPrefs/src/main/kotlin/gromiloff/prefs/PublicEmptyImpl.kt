@@ -16,42 +16,50 @@ open class PublicEmptyImpl(context: Context, name : String) : PublicPref {
     /* getter for fields */
     override fun <T : PrefEnum<*>> getString(key: T, defaultValue: String?) =
         pref.getString(key.name, defaultValue ?: key.defaultValue as String).apply {
-            Timber.d("> load value for [$key] = $this")
+            Timber.d("> getString [$key] = $this")
         }
     override fun <T : PrefEnum<*>> getInt(key: T, defaultValue : Int?) =
-        pref.getInt(key.name, defaultValue ?: key.defaultValue as Int)
+        pref.getInt(key.name, defaultValue ?: key.defaultValue as Int).apply {
+            Timber.d("> getInt [$key] = $this")
+        }
     override fun <T : PrefEnum<*>> getBoolean(key: T, defaultValue : Boolean) =
-        pref.getBoolean(key.name, defaultValue)
+        pref.getBoolean(key.name, defaultValue).apply {
+            Timber.d("> getBoolean [$key] = $this")
+        }
     override fun <T : PrefEnum<*>> getFloat(key: T, defaultValue : Float) =
-        pref.getFloat(key.name, defaultValue)
+        pref.getFloat(key.name, defaultValue).apply {
+            Timber.d("> getFloat [$key] = $this")
+        }
     override fun <T : PrefEnum<*>> getLong(key: T, defaultValue : Long) =
-        pref.getLong(key.name, defaultValue)
+        pref.getLong(key.name, defaultValue).apply {
+            Timber.d("> getLong [$key] = $this")
+        }
 
     /* setter for fields */
     override fun <T : PrefEnum<*>> setBoolean(key: T, value : Boolean) {
         store { it.putBoolean(key.toString(), value) }
-        Timber.d("save new value for [$key] = $value")
+        Timber.d("> setBoolean [$key] = $value")
     }
     override fun <T : PrefEnum<*>> setFloat(key: T, value : Float) {
         store { it.putFloat(key.toString(), value) }
-        Timber.d("save new value for [$key] = $value")
+        Timber.d("> setFloat [$key] = $value")
     }
     override fun <T : PrefEnum<*>> setInt(key: T, value : Int) {
         store { it.putInt(key.toString(), value) }
-        Timber.d("save new value for [$key] = $value")
+        Timber.d("> setInt [$key] = $value")
     }
     override fun <T : PrefEnum<*>> setLong(key: T, value : Long) {
         store { it.putLong(key.toString(), value) }
-        Timber.d("save new value for [$key] = $value")
+        Timber.d("> setLong [$key] = $value")
     }
     override fun <T : PrefEnum<*>> setString(key: T, value : String?) {
         store { it.putString(key.toString(), value) }
-        Timber.d("save new value for [$key] = $value")
+        Timber.d("> setString [$key] = $value")
     }
 
     override fun <T : PrefEnum<*>> resetString(key: T){
         setString(key, key.defaultValue as String)
-        Timber.d("reset value for [$key]")
+        Timber.d("> resetString [$key]")
     }
 
     override fun getPref(): SharedPreferences = pref

@@ -31,7 +31,9 @@ internal object SyncImpl : SyncApi {
             // получаем актуальный фильтрованный список всех пакетов и их uid
             val pairs = PackageHelper(context.packageManager, context.packageName).getAllPackages()
 
-            val timeFrom = to - 12 * 60 * 60 * 1000 // -12 часов от текущего
+            val lastSync = storeApi.lastUpdate()
+            // время начала считаем от предыдущего либо -12 часов от текущего (тестовые данные)
+            val timeFrom = if(lastSync > 0L) lastSync else to - 12 * 60 * 60 * 1000
             (context.getSystemService(Context.NETWORK_STATS_SERVICE) as NetworkStatsManager).let { manager ->
                 pairs.mapTo(LinkedList()) {
                     async {
