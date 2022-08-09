@@ -25,7 +25,7 @@
             <option value="$PROJECT_DIR$/common/toast" />
             <option value="$PROJECT_DIR$/repository" />
             <option value="$PROJECT_DIR$/repository/cryptoWallet" />
-            <option value="$PROJECT_DIR$/repository/sync" />
+            <option value="$PROJECT_DIR$/repository/trafficWork" />
             <option value="$PROJECT_DIR$/table" />
             <option value="$PROJECT_DIR$/table/traffic" />
             <option value="$PROJECT_DIR$/ui" />

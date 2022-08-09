@@ -13,10 +13,10 @@ object Modules {
     const val filesApi = ":common:filesApi"
 
     // table
-    const val table_traffic = ":table:traffic"
+    const val tableTraffic = ":table:traffic"
 
     // repository
-    const val sync = ":repository:sync"
+    const val trafficWork = ":repository:trafficWork"
     const val cryptoWallet = ":repository:cryptoWallet"
 
     // ui // screen

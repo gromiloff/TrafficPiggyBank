@@ -11,7 +11,7 @@ import org.koin.core.component.KoinComponent
 import org.koin.core.context.GlobalContext.startKoin
 import org.koin.core.logger.Level
 import repository.crypto_wallet.CryptoWalletModule
-import repository.sync.SyncModule
+import repository.operation.TrafficWorkModule
 import table.traffic.TableTrafficModule
 import timber.log.Timber
 
@@ -33,7 +33,7 @@ class App : LangApplication(), KoinComponent {
 
                 TableTrafficModule.create(this@App),
 
-                SyncModule.create(this@App),
+                TrafficWorkModule.create(this@App),
                 CryptoWalletModule.create(this@App),
 
                 LoginModule.create(this@App),

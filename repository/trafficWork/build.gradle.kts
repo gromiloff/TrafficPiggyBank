@@ -9,5 +9,5 @@ dependencies {
 
     api(project(Modules.module))
     api(project(Modules.public))
-    api(project(Modules.table_traffic))
+    api(project(Modules.tableTraffic))
 }

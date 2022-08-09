@@ -62,9 +62,9 @@ fun DependencyHandlerScope.applicationDependency() {
     implementation(project(Modules.public))
     implementation(project(Modules.filesApi))
 
-    implementation(project(Modules.table_traffic))
+    implementation(project(Modules.tableTraffic))
 
-    implementation(project(Modules.sync))
+    implementation(project(Modules.trafficWork))
     implementation(project(Modules.cryptoWallet))
 
     implementation(project(Modules.uiLogin))

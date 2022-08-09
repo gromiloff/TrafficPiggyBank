@@ -7,6 +7,8 @@ import api.ll.RequestPermissionApi
  * @author gromiloff
  * */
 interface SyncApi : RequestPermissionApi {
-    /** стартовая точка синхронизации данных начиная с заданного [from] по [to] включительно */
-    suspend fun start(from : Long = 0, to : Long = System.currentTimeMillis())
+    /** стартовая точка синхронизации данных
+     * Синхронизация считается с времени прследней если она была, либо только за сегодня
+     * до текущего времени */
+    suspend fun start()
 }

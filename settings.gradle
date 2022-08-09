@@ -24,7 +24,7 @@ include ':common:filesApi'
 
 include ':table:traffic'
 
-include ':repository:sync'
+include ':repository:trafficWork'
 include ':repository:cryptoWallet'
 
 include ':ui:screen:login'

@@ -1,4 +1,4 @@
-package repository.sync.packages
+package repository.operation.packages
 
 import android.Manifest
 import android.content.pm.ApplicationInfo
@@ -20,6 +20,7 @@ internal data class PackageHelper(
             if (packageInfo.skipThisApp()) continue
             if (packageInfo.skipBySystemPackage()) continue
             if (packageInfo.skipByPermissionInternet()) continue
+            // todo https://github.com/gromiloff/TrafficPiggyBank/issues/2
             if (!packageInfo.canIcon()) continue
             // все проверки пройдены - считаем пакет рабочим для дальнейшего обследования
             result.add(Pair(packageInfo.packageName, packageInfo.uid))

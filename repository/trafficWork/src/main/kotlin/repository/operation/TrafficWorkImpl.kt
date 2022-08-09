@@ -1,4 +1,4 @@
-package repository.sync
+package repository.operation
 
 import android.Manifest
 import android.app.AppOpsManager
@@ -16,28 +16,29 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.withContext
 import org.koin.java.KoinJavaComponent
-import repository.sync.packages.PackageHelper
+import repository.operation.packages.PackageHelper
 import java.util.*
 
 
 /**
  * Реализация логики управления синхронизацией данных
  * */
-internal object SyncImpl : SyncApi {
-    override suspend fun start(from: Long, to: Long) {
+internal object TrafficWorkImpl : SyncApi {
+    override suspend fun start() {
         withContext(Dispatchers.IO) {
             val storeApi = KoinJavaComponent.get<TableTrafficApi>(TableTrafficApi::class.java)
             val context = KoinJavaComponent.get<Context>(Context::class.java)
             // получаем актуальный фильтрованный список всех пакетов и их uid
             val pairs = PackageHelper(context.packageManager, context.packageName).getAllPackages()
 
+            val timeEnd = System.currentTimeMillis()
             val lastSync = storeApi.lastUpdate()
             // время начала считаем от предыдущего либо -12 часов от текущего (тестовые данные)
-            val timeFrom = if(lastSync > 0L) lastSync else to - 12 * 60 * 60 * 1000
+            val timeFrom = if(lastSync > 0L) lastSync else timeEnd - 12 * 60 * 60 * 1000
             (context.getSystemService(Context.NETWORK_STATS_SERVICE) as NetworkStatsManager).let { manager ->
                 pairs.mapTo(LinkedList()) {
                     async {
-                        it.second.syncUid(manager, timeFrom, to).forEach { bucket ->
+                        it.second.syncUid(manager, timeFrom, timeEnd).forEach { bucket ->
                             storeApi.insertOrReplace(
                                 packageName = it.first,
                                 packageUid = it.second,
