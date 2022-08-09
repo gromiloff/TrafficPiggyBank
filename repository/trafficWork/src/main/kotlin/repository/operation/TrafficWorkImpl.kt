@@ -9,7 +9,7 @@ import android.content.pm.PackageManager
 import android.net.ConnectivityManager
 import android.os.Process
 import androidx.annotation.WorkerThread
-import api.function.SyncApi
+import api.function.TrafficWorkApi
 import api.ll.PermissionWrap
 import api.table.TableTrafficApi
 import kotlinx.coroutines.Dispatchers
@@ -23,7 +23,7 @@ import java.util.*
 /**
  * Реализация логики управления синхронизацией данных
  * */
-internal object TrafficWorkImpl : SyncApi {
+internal object TrafficWorkImpl : TrafficWorkApi {
     override suspend fun start() {
         withContext(Dispatchers.IO) {
             val storeApi = KoinJavaComponent.get<TableTrafficApi>(TableTrafficApi::class.java)

@@ -3,7 +3,7 @@ package login.ui
 import android.content.Intent
 import android.view.View
 import api.function.CryptoWalletApi
-import api.function.SyncApi
+import api.function.TrafficWorkApi
 import design.BaseViewModel
 import files.shareDB
 import org.koin.core.component.get
@@ -23,7 +23,7 @@ internal class LoginViewModel : BaseViewModel<LoginAction>() {
     /** анонимная авторизация */
     val startSync = View.OnClickListener {
         wrapperWaiting {
-            val api = get<SyncApi>()
+            val api = get<TrafficWorkApi>()
             val permission = api.requestPermissions()
             if(permission.isEmpty()) {
                 api.start()

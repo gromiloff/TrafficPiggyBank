@@ -1,7 +1,7 @@
 package repository.operation
 
 import android.content.Context
-import api.function.SyncApi
+import api.function.TrafficWorkApi
 import module.FeatureModule
 import org.koin.dsl.module
 
@@ -10,7 +10,7 @@ import org.koin.dsl.module
  * */
 object TrafficWorkModule : FeatureModule {
     override fun create(context: Context) = module {
-        single<SyncApi> {
+        single<TrafficWorkApi> {
             TrafficWorkImpl
         }
     }

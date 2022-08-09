@@ -1,6 +1,7 @@
 package impl
 
 import android.content.Context
+import firebase.FirebaseModule
 import gromiloff.prefs.PublicEmptyImpl
 import lang.LangApplication
 import login.LoginModule
@@ -29,6 +30,8 @@ class App : LangApplication(), KoinComponent {
             androidLogger(Level.INFO)
             androidContext(this@App)
             modules(
+                FirebaseModule.create(this@App),
+
                 ToastModule.create(this@App),
 
                 TableTrafficModule.create(this@App),

@@ -6,7 +6,7 @@ import api.ll.RequestPermissionApi
  * Публичные функции для работы с синхронизацией данных
  * @author gromiloff
  * */
-interface SyncApi : RequestPermissionApi {
+interface TrafficWorkApi : RequestPermissionApi {
     /** стартовая точка синхронизации данных
      * Синхронизация считается с времени прследней если она была, либо только за сегодня
      * до текущего времени */

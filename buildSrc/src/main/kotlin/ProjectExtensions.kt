@@ -54,7 +54,7 @@ fun DependencyHandlerScope.applicationDependency() {
     requiredKoinDependency()
     requiredDependency()
     implementation(project(Modules.module))
-   // implementation(project(Modules.firebase))
+    implementation(project(Modules.firebase))
     implementation(project(Modules.lang))
     implementation(project(Modules.prefs))
     implementation(project(Modules.design))

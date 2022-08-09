@@ -4,9 +4,9 @@ plugins {
     id("kotlin-parcelize")
     id("kotlin-kapt")
     //id("io.sentry.android.gradle")
-    //id("com.google.gms.google-services")
-    //id("com.google.firebase.crashlytics")
-   // id("com.google.firebase.firebase-perf")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
+    id("com.google.firebase.firebase-perf")
 }
 
 applyAndroidConfig {
